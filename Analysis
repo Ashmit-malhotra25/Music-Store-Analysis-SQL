@@ -1,0 +1,76 @@
+-- 🎵 Music Store SQL Analysis Project: Detailed Questions & Solutions
+
+-- 1️⃣ What are the top 5 best-selling genres?
+SELECT g.name AS genre, COUNT(il.track_id) AS total_sales
+FROM invoice_line il
+JOIN track t ON il.track_id = t.track_id
+JOIN genre g ON t.genre_id = g.genre_id
+GROUP BY g.name
+ORDER BY total_sales DESC
+LIMIT 5;
+
+-- 2️⃣ Which artists have the most tracks in the database?
+SELECT ar.name AS artist_name, COUNT(t.track_id) AS track_count
+FROM artist ar
+JOIN album al ON ar.artist_id = al.artist_id
+JOIN track t ON al.album_id = t.album_id
+GROUP BY ar.name
+ORDER BY track_count DESC;
+
+-- 3️⃣ What are the top 3 countries by total sales?
+SELECT billing_country, SUM(total) AS total_sales
+FROM invoice
+GROUP BY billing_country
+ORDER BY total_sales DESC
+LIMIT 3;
+
+-- 4️⃣ Which customers have purchased the most number of tracks?
+SELECT c.customer_id, c.first_name || ' ' || c.last_name AS customer_name, COUNT(il.invoice_line_id) AS tracks_bought
+FROM customer c
+JOIN invoice i ON c.customer_id = i.customer_id
+JOIN invoice_line il ON i.invoice_id = il.invoice_id
+GROUP BY c.customer_id
+ORDER BY tracks_bought DESC;
+
+-- 5️⃣ What is the average purchase amount per invoice?
+SELECT ROUND(AVG(total), 2) AS avg_invoice_amount
+FROM invoice;
+
+-- 6️⃣ Find the most purchased track.
+SELECT t.name AS track_name, COUNT(il.track_id) AS purchase_count
+FROM invoice_line il
+JOIN track t ON il.track_id = t.track_id
+GROUP BY t.name
+ORDER BY purchase_count DESC
+LIMIT 1;
+
+-- 7️⃣ Which albums have the most number of tracks?
+SELECT al.title AS album_title, COUNT(t.track_id) AS num_tracks
+FROM album al
+JOIN track t ON al.album_id = t.album_id
+GROUP BY al.title
+ORDER BY num_tracks DESC;
+
+-- 8️⃣ Find all invoices where the total was above the average invoice total.
+SELECT invoice_id, customer_id, total
+FROM invoice
+WHERE total > (SELECT AVG(total) FROM invoice)
+ORDER BY total DESC;
+
+-- 9️⃣ Show the total sales by genre.
+SELECT g.name AS genre, ROUND(SUM(il.unit_price * il.quantity), 2) AS total_revenue
+FROM invoice_line il
+JOIN track t ON il.track_id = t.track_id
+JOIN genre g ON t.genre_id = g.genre_id
+GROUP BY g.name
+ORDER BY total_revenue DESC;
+
+-- 🔟 List customers who bought songs from every genre.
+SELECT c.customer_id
+FROM customer c
+JOIN invoice i ON c.customer_id = i.customer_id
+JOIN invoice_line il ON i.invoice_id = il.invoice_id
+JOIN track t ON il.track_id = t.track_id
+JOIN genre g ON t.genre_id = g.genre_id
+GROUP BY c.customer_id
+HAVING COUNT(DISTINCT g.genre_id) = (SELECT COUNT(*) FROM genre);
