@@ -1,3 +1,4 @@
+<img width="587" height="592" alt="Screenshot 2025-09-20 224206" src="https://github.com/user-attachments/assets/5b68cb92-09a9-497d-b99b-282a36a4c53c" />
 # Music Store Sales Analysis – SQL Project
 
 ## Overview
