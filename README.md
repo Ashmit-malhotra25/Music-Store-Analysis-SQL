@@ -24,5 +24,5 @@ This project analyzes a multi-table music store database using SQL to uncover sa
 2. Run the SQL scripts to reproduce the analysis  
 3. Modify queries as needed for additional insights  
 
-Schema of Data
-<img width="587" height="592" alt="Screenshot 2025-09-20 224206" src="https://github.com/user-attachments/assets/5b68cb92-09a9-497d-b99b-282a36a4c53c" />
+## Schema of Data
+- <img width="587" height="592" alt="Screenshot 2025-09-20 224206" src="https://github.com/user-attachments/assets/5b68cb92-09a9-497d-b99b-282a36a4c53c" />
