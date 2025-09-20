@@ -1,18 +1,28 @@
-# Music-Store-Analysis-SQL
+# Music Store Sales Analysis – SQL Project
 
-Music-Store-Sales-Analysis-SQL
-🎵 Music Store Sales Analysis – SQL Project 🔍 Overview This project involves analyzing a multi-table music store database using structured SQL queries to uncover sales performance, customer behavior, and genre trends. By leveraging relational data operations, the analysis supports business decisions for improving customer targeting and optimizing product offerings.
+## Overview
+This project analyzes a multi-table music store database using SQL to uncover sales performance, customer behavior, and genre trends. The insights support better marketing, customer targeting, and product planning.
 
-✅ Key Objectives & Insights
+## Key Objectives
+- Identify top revenue-generating tracks, albums, and artists  
+- Track monthly sales trends to highlight spikes and dips  
+- Analyze genre popularity and purchasing trends  
+- Segment customers by country, city, and purchase frequency  
+- Evaluate artist and album performance based on revenue  
 
-Sales Performance Analysis Identified top revenue-generating tracks, albums, and artists. Tracked monthly sales trends to highlight seasonal spikes and dips.
+## Tools and Techniques
+- SQL (PostgreSQL): Joins, aggregations, filters, sorting, and subqueries  
+- Relational Database Concepts: Invoices, Customers, Invoice_Items, Tracks, Albums, Genres, and Artists tables  
 
-Genre Popularity & Trends Aggregated total sales and number of purchases by music genre. Discovered that Rock, Pop, and Jazz were among the most purchased genres.
+## Use Cases
+- Improve marketing strategies and personalization  
+- Monitor artist and genre-level sales performance  
+- Identify key revenue-driving regions  
 
-Customer Purchase Behavior Segmented customers based on: Country/City Purchase frequency Preferred genres and artists Found key regions (e.g., USA, Canada, Germany) driving global music sales.
+## How to Use
+1. Import the music store database into PostgreSQL  
+2. Run the SQL scripts to reproduce the analysis  
+3. Modify queries as needed for additional insights  
 
-Artist & Album Impact Highlighted top-performing artists and albums based on revenue. Mapped purchase behavior by artist popularity and album release year.
-
-🧰 Tools & Techniques Used SQL (PostgreSQL): Joins, aggregations (GROUP BY), filters (WHERE, HAVING), sorting, subqueries. Relational Database Concepts: Used tables like Invoices, Customers, Invoice_Items, Tracks, Albums, Genres, and Artists.
-
-📁 Use Case Perfect for businesses aiming to: Enhance music marketing strategies Personalize offerings based on customer preferences Monitor artist/genre-level sales performance
+## Author
+Ashmit Malhotra
